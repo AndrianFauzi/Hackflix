@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Responsive Food Website Design Tutorial</title>
+    <title>Hackflix</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -39,15 +39,17 @@
             <a href="#" class="fas fa-heart"></a>
         </div>
 
+
     </header>
 
     <!-- header section ends-->
 
     <!-- search form  -->
 
-    <form action="" id="search-form">
-        <input type="search" placeholder="search here..." name="" id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
+    <form action="/home/<%= id %>" id="search-form" method="get">
+        <input type="text" placeholder="search here..." name="search" id="search-box">
+        <button type="submit" for="search-box" class="fas fa-search"
+            style="width: 40px; cursor: pointer; height: 40px; border-radius: 80px;"></button>
         <i class="fas fa-times" id="close"></i>
     </form>
 
@@ -59,21 +61,39 @@
 
             <div class="swiper-wrapper wrapper">
 
-                <% for (let i=0; i < 3; i++) { %>
-                    <div class="swiper-slide slide">
-                        <div class="content">
-                            <span>our special movie</span>
-                            <h3>
-                                <%= data[i].title %>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
-                            <a href="#" class="btn">watch now</a>
-                        </div>
-                        <div class="image">
-                            <img src="<%= data[i].img %>" alt="">
-                        </div>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>our special movie</span>
+                        <h3>The Batman 2022</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
+                        <a href="/home/watch/1" class="btn">watch now</a>
                     </div>
-                    <% } %>
+                    <div class="image">
+                        <img src="https://i.imgur.com/catD7EH.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>our special movie</span>
+                        <h3>Toy Story 4</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
+                        <a href="/home/watch/7" class="btn">watch now</a>
+                    </div>
+                    <div class="image">
+                        <img src="https://i.imgur.com/xoyEh6r.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>our special movie</span>
+                        <h3>Up</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
+                        <a href="/home/watch/10" class="btn">watch now</a>
+                    </div>
+                    <div class="image">
+                        <img src="https://i.imgur.com/0FnolWU.jpg" alt="">
+                    </div>
+                </div>
 
             </div>
 
@@ -109,7 +129,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <a href="#" class="btn">watch now</a>
+                    <a href="/watch/<%= data[i].id %>" class="btn">watch now</a>
                 </div>
                 <% } %>
 
@@ -129,7 +149,7 @@
         <div class="row">
 
             <div class="image">
-                <img src="rawPicture//Doctor_Strange_poster.jpg" alt="">
+                <img src="https://i.imgur.com/xoyEh6r.jpg" alt="">
             </div>
 
             <div class="content">
@@ -143,10 +163,9 @@
                     <!-- <i class="fa-solid fa-clapperboard-play"></i> -->
                     <div class="icons">
                         <i class="fa fa-play"></i>
-                        <span><a href="">watch now</a></span>
+                        <span><a href="/home/watch/7">watch now</a></span>
                     </div>
                 </div>
-                <a href="#" class="btn">movie details</a>
             </div>
 
         </div>
@@ -167,7 +186,7 @@
                 <div class="box">
                     <div class="image">
                         <img src="<%= e.img %>" alt="">
-                        <a href="#" class="fas fa-heart"></a>
+                        <a href="/home/<%= id %>/favorite/<%= e.id %>" class="fas fa-heart"></a>
                     </div>
                     <div class="content">
                         <div class="stars">
@@ -205,9 +224,9 @@
                 <div class="swiper-slide slide">
                     <i class="fas fa-quote-right"></i>
                     <div class="user">
-                        <img src="images/pic-1.png" alt="">
+                        <img src="https://i.imgur.com/M2ZDuAa.png" alt="">
                         <div class="user-info">
-                            <h3>john deo</h3>
+                            <h3>Rose Oriana</h3>
                             <div class="stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -225,9 +244,9 @@
                 <div class="swiper-slide slide">
                     <i class="fas fa-quote-right"></i>
                     <div class="user">
-                        <img src="images/pic-2.png" alt="">
+                        <img src="https://i.imgur.com/2BciyWU.png" alt="">
                         <div class="user-info">
-                            <h3>john deo</h3>
+                            <h3>Steve</h3>
                             <div class="stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -245,9 +264,9 @@
                 <div class="swiper-slide slide">
                     <i class="fas fa-quote-right"></i>
                     <div class="user">
-                        <img src="images/pic-3.png" alt="">
+                        <img src="https://i.imgur.com/A2XCEJ2.png" alt="">
                         <div class="user-info">
-                            <h3>john deo</h3>
+                            <h3>Clarie Kagenoh</h3>
                             <div class="stars">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -265,7 +284,7 @@
                 <div class="swiper-slide slide">
                     <i class="fas fa-quote-right"></i>
                     <div class="user">
-                        <img src="images/pic-4.png" alt="">
+                        <img src="https://i.imgur.com/wrBGBju.png" alt="">
                         <div class="user-info">
                             <h3>john deo</h3>
                             <div class="stars">
@@ -401,9 +420,9 @@
 
     <!-- loader part  -->
     <!-- <div class="loader-container">
-        <img src="images/giphy.gif" alt="">
-    </div> -->
-
+        <img src="https://i.imgur.com/ImzbS6o.gif" alt="">
+    </div>
+ -->
 
 
 
@@ -427,7 +446,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- custom js file link  -->
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 
 </body>
 

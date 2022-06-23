@@ -1,32 +1,32 @@
 [
     {
-        "MovieId": 1
+        "MovieDetailId": 1
     },
     {
-        "MovieId": 2
+        "MovieDetailId": 2
     },
     {
-        "MovieId": 3
+        "MovieDetailId": 3
     },
     {
-        "MovieId": 4
+        "MovieDetailId": 4
     },
     {
-        "MovieId": 5
+        "MovieDetailId": 5
     },
     {
-        "MovieId": 6
+        "MovieDetailId": 6
     },
     {
-        "MovieId": 7
+        "MovieDetailId": 7
     },
     {
-        "MovieId": 8
+        "MovieDetailId": 8
     },
     {
-        "MovieId": 9
+        "MovieDetailId": 9
     },
     {
-        "MovieId": 10
+        "MovieDetailId": 10
     }
 ]

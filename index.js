@@ -13,11 +13,11 @@ app.use(express.static("views"));
 
 app.use(session({
     secret: 'rahasia',
-    resave: false, 
+    resave: false,
     saveUninitialized: false,
-    cookie:{
-        secure:false,//karena masih development false aja dl
-        sameSite:true
+    cookie: {
+        secure: false,//karena masih development false aja dl
+        sameSite: true
     }
 }))
 

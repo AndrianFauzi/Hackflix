@@ -10,21 +10,48 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Watch online</title>
 </head>
 
 <body>
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-secondary">
-        <a class="navbar-brand text-light" href="#">
-            Bootstrap
+        <a class="navbar-brand text-light" href="/">
+            Kembali
         </a>
     </nav>
-    <div class="container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/DWcJFNfaw9c" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+    <div class="container mt-5">
+        <div class="d-flex">
+            <div class="ml-5">
+                <span>
+                    <h2>
+                        <%= data.title %>
+                    </h2>
+                    <img src="<%= data.img %>" alt="" style="width: 80%;">
+                    <div style="width: fit-content; height: 30px; border-radius: 9px;" class="bg-secondary mt-2">
+                        <p class="text-light">
+                            <%= data.category %>
+                        </p>
+                    </div>
+                </span>
+
+            </div>
+            <div class="play mt-5 ml-5">
+                <iframe width="560" height="315" src="<%= data.url %>" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <p>
+                    <%= data.description %>
+                </p>
+                <hr>
+                <p>Released year : <%= data.released_year %>
+                </p>
+                <p>Sutradara : <%= data.sutradara %>
+                </p>
+
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->

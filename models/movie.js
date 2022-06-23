@@ -11,16 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Movie.hasOne(models.Show, { foreignKey: 'MovieId' })
+      Movie.belongsTo(models.MovieDetail, { foreignKey: 'MovieDetailId' })
     }
   }
   Movie.init({
-    title: DataTypes.STRING,
-    released_year: DataTypes.STRING,
-    sutradara: DataTypes.STRING,
-    category: DataTypes.STRING,
-    img: DataTypes.STRING,
-    description: DataTypes.TEXT
+    MovieDetailId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Movie',

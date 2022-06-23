@@ -18,7 +18,7 @@ module.exports = {
       e.updatedAt = new Date()
     });
 
-    return queryInterface.bulkInsert('Movies', data)
+    return queryInterface.bulkInsert('MovieDetails', data)
   },
 
   down(queryInterface, Sequelize) {
@@ -28,6 +28,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete('Movies')
+    return queryInterface.bulkDelete('MovieDetails')
   }
 };
