@@ -10,9 +10,13 @@ const Controller = require('../controllers/controller.js');
 
 
 router.get('/',  Controller.ShowMovies)
+
 router.get('/login', UserController.loginForm)
+router.post('/login', UserController.postLogin)
+
 router.get('/register', UserController.registerForm)
 router.post('/register', UserController.postRegister)
+
 router.use(isLoggedIn) //jadi gabisa lewat kalo belom login kalo karena diletakkan sebelum router lain INGAT POSISI MENUNJUKKAN PRESTASI
 router.get('/watch/:id', Controller.Watch)
 

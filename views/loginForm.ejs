@@ -11,7 +11,7 @@
 </head>
 <h1>Login Form</h1>
 
-<form action="/login" method="get">
+<form action="/login" method="post">
 
     <% if (error) { %>
     <p style="color:red"> <%= error %> </p>
@@ -25,8 +25,7 @@
             <label for="password">Password: </label>
             <input type="password" name="password" id="password"  class="form-control">
         </div>
-        <input class="btn btn-outline-dark rounded-1" type="submit" value="Submit" />
-    </div>
+        <button type="submit" class="btn btn-primary">Submit</button>    </div>
 </form>
 
 </html>
