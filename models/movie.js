@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     released_year: DataTypes.STRING,
     sutradara: DataTypes.STRING,
     category: DataTypes.STRING,
-    img: DataTypes.STRING
+    img: DataTypes.STRING,
+    description: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Movie',
