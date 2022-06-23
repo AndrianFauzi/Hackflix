@@ -1,4 +1,5 @@
 const {User} = require('../models');
+var bcrypt = require ('bcryptjs')
 
 class UserController{
 

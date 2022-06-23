@@ -1,4 +1,5 @@
 'use strict';
+var bcrypt = require ('bcryptjs')
 const {
   Model
 } = require('sequelize');
