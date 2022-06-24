@@ -8,15 +8,19 @@ const Controller = require('../controllers/controller.js');
 // const hiring = require('./hiring.js');
 
 
-
+router.get('/', Controller.showLandingPage)
 router.get('/login', UserController.loginForm)
 router.post('/login', UserController.postLogin)
 router.get('/register', UserController.registerForm)
 router.post('/register', UserController.postRegister)
+router.get('/home', Controller.ShowMovies)
+
+router.use(isLoggedIn)
+
 router.get('/home/:id', Controller.ShowMovies)
+router.get('/home/:id/account', UserController.getAccount)
 router.get('/home/:id/favorite/:movieId', Controller.Favorite)
 // router.get('/home/:id/')
-// router.use(isLoggedIn)
 router.get('/home/watch/:id', Controller.Watch)
 // router.use(isAdmin) //jadi gabisa lewat kalo belom login kalo karena diletakkan sebelum router lain INGAT POSISI MENUNJUKKAN PRESTASI
 
