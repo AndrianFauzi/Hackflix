@@ -31,6 +31,10 @@
             <a href="#about">about</a>
             <a href="#menu">list movies</a>
             <a href="#review">review</a>
+            <% if (id) { %>
+                
+                <a href="/home/<%= id %>/account">Your Account</a>
+            <% } %>
         </nav>
 
         <div class="icons">
@@ -316,7 +320,7 @@
         <h3 class="sub-heading"> order now </h3>
         <h1 class="heading"> free and fast </h1>
 
-        <form action="">
+        <form action="/home/<%= id %> " method="post">
 
             <div class="inputBox">
                 <div class="input">
@@ -334,13 +338,13 @@
                     <input type="text" placeholder="enter food name">
                 </div>
                 <div class="input">
-                    <span>additional food</span>
+                    <span>additional comment</span>
                     <input type="test" placeholder="extra with food">
                 </div>
             </div>
             <div class="inputBox">
                 <div class="input">
-                    <span>how musch</span>
+                    <span>rating</span>
                     <input type="number" placeholder="how many orders">
                 </div>
                 <div class="input">

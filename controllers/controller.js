@@ -2,6 +2,10 @@ const { MovieDetail, Movie, Favorite } = require('../models/index')
 const { Op } = require('sequelize')
 class Controller {
 
+    static showLandingPage(req,res){
+        res.render('landingPage')
+    }
+
     static ShowMovies(req, res) {
         // res.send('terhunubg')
         const id = req.params.id

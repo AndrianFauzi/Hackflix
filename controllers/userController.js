@@ -69,6 +69,19 @@ class UserController {
         })
 
     }
+
+    static getAccount(req,res){
+
+        User.findAll()
+        .then(data=>{
+            res.render('account', {data})
+        })
+        .catch(err=>{ res.send(err)})
+            
+        
+    }
+
+
 }
 
 
