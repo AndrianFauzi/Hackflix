@@ -5,6 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <header>
+
+        <a href="#" class="logo"></i>hackflix.</a>
+
+        <nav class="navbar">
+            <a class="active" href="/home">home</a>
+            <a href="#dishes">movies</a>
+            <a href="#about">about</a>
+            <a href="#menu">list movies</a>
+            <a href="#review">review</a>
+            <a href="/logout">logout</a>
+
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+        </div>
+
+
+    </header>
 </head>
 <body>
 <h1>Welcome <%= data.username %></h1>
@@ -14,12 +37,12 @@
             <br />
             Last Name: <%= data.lastName %>
             <br />
-            Birth Date: <%= data.birthDate %>
+            Birth Date: <%= formatDate(data.birthDate) %>
             <br />
             E-Mail: <%= data.email %>
             <br />
         </p>
-
+        <a href="/home/account/edit"><button>Edit</button></a>
     </div>
     
 </body>

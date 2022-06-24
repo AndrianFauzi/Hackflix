@@ -1,4 +1,4 @@
-const { MovieDetail, Movie, Favorite } = require('../models/index')
+const { MovieDetail, Movie, Favorite, User } = require('../models/index')
 const { Op } = require('sequelize')
 class Controller {
 
@@ -7,10 +7,9 @@ class Controller {
     }
 
     static ShowMovies(req, res) {
-        // res.send('terhunubg')
-        const id = req.params.id
-        console.log(id);
+        
         const { search } = req.query
+        let people
         const options = {
         }
         if (search) {
@@ -21,10 +20,11 @@ class Controller {
             }
             // }
         }
+        //
         MovieDetail.findAll(options)
             .then((data) => {
-                // console.log(data)
-                res.render('showMovies', { data, id })
+                console.log(people)
+                res.render('showMovies', { data })
             })
             .catch((err) => {
                 // console.log(err);
@@ -34,8 +34,9 @@ class Controller {
     }
 
     static Watch(req, res) {
-        const id = +req.params.id
-        MovieDetail.findByPk(id)
+        const id = req.params.id
+        console.log(id);
+        MovieDetail.findByPk(+id)
             .then((data) => {
                 res.render('WatchMovie', { data })
             })
@@ -45,13 +46,13 @@ class Controller {
     }
 
     static Favorite(req, res) {
-        const id = +req.params.id
+        const userId = req.session.userId
         const MovieId = +req.params.movieId
-        console.log(id, MovieId);
+        console.log(userId, MovieId);
 
-        Favorite.create({ id, MovieId })
+        Favorite.create({ userId, MovieId })
             .then(() => {
-                res.redirect(`/home/${id}`)
+                res.redirect(`/home`)
             })
             .catch((err) => {
                 console.log(err, '<<<<');
