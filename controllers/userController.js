@@ -1,5 +1,6 @@
 const { User } = require('../models');
 var bcrypt = require('bcryptjs')
+const formatDate = require('../helpers/index');
 
 class UserController {
 
@@ -44,7 +45,7 @@ class UserController {
 
                         req.session.userId = user.id
                         req.session.role = user.role //set session di controller
-                        return res.redirect(`/home/${user.id}`)
+                        return res.redirect(`/home`)
                     } else {
                         const error = 'Invalid username/password' // kalo mau tampilin call req.query di login form
                         return res.redirect(`/login?error=${error}`)
@@ -71,14 +72,39 @@ class UserController {
     }
 
     static getAccount(req,res){
+       const userId = req.session.userId
 
-        User.findAll()
+        User.findByPk(userId)
         .then(data=>{
-            res.render('account', {data})
+            res.render('account', {data, formatDate})
         })
         .catch(err=>{ res.send(err)})
             
         
+    }
+
+    static editAccount(req,res){
+        const userId = req.session.userId
+
+        User.findByPk(userId)
+        .then(data=>{
+            res.render('editAccount', {data, formatDate})
+        })
+        .catch(err=>{ res.send(err)})
+           
+    }
+
+    static updateAccount(req,res){
+        const userId = req.session.userId
+        const {firstName, lastName, birthDate, email} = req.body
+
+        User.update({firstName, lastName, birthDate, email},{ where:{id :userId}
+
+        })
+        .then(data=>{
+            res.redirect('/home/account')
+        })
+        .catch(err=>{res.send(err)})
     }
 
 

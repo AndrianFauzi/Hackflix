@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Welcome <%= data.username %></h1>
+
+
+    <div>
+        <form action="/home/account/edit" method="post">
+        <p>
+         <label for="firstName"> First Name:</label>  
+         <input type="text" name="firstName" value="<%= data.firstName %>">
+            <br />
+            <label for="lastName">  Last Name:</label>
+            <input type="text" name="lastName" value="<%= data.lastName %>"> 
+            <br />
+           <label for="birthDate">Birth Date:</label> 
+           <input type="text" name="birthDate" value="<%= formatDate(data.birthDate) %>"> 
+            <br />
+           <label for="email" >E-Mail: </label>
+           <input type="text" name="email" value="<%= data.email %>">
+            <br />
+        </p>
+        <input class="btn btn-info rounded-1" type="submit" value="Submit" />
+    </div>
+    </form>
+</body>
+</html>

@@ -31,10 +31,11 @@
             <a href="#about">about</a>
             <a href="#menu">list movies</a>
             <a href="#review">review</a>
-            <% if (id) { %>
-                
-                <a href="/home/<%= id %>/account">Your Account</a>
-            <% } %>
+            <a href="/logout">logout</a>
+ 
+
+                <a href="/home/account">Your Account</a>
+
         </nav>
 
         <div class="icons">
@@ -50,7 +51,7 @@
 
     <!-- search form  -->
 
-    <form action="/home/<%= id %>" id="search-form" method="get">
+    <form action="/home" id="search-form" method="get">
         <input type="text" placeholder="search here..." name="search" id="search-box">
         <button type="submit" for="search-box" class="fas fa-search"
             style="width: 40px; cursor: pointer; height: 40px; border-radius: 80px;"></button>
@@ -113,7 +114,8 @@
 
     <section class="dishes" id="dishes">
 
-        <h3 class="sub-heading"> our movies </h3>
+        <h3 class="sub-heading"> Hello 
+        </h3>
         <h1 class="heading"> popular movies </h1>
 
         <div class="box-container">
@@ -133,7 +135,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <a href="/watch/<%= data[i].id %>" class="btn">watch now</a>
+                    <a href="/home/watch/<%= data[i].id %>" class="btn">watch now</a>
                 </div>
                 <% } %>
 
@@ -190,7 +192,7 @@
                 <div class="box">
                     <div class="image">
                         <img src="<%= e.img %>" alt="">
-                        <a href="/home/<%= id %>/favorite/<%= e.id %>" class="fas fa-heart"></a>
+                        <a href="/home/favorite/<%= e.id %>" class="fas fa-heart"></a>
                     </div>
                     <div class="content">
                         <div class="stars">
@@ -204,7 +206,7 @@
                             <%= e.title %>
                         </h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                        <a href="watch/<%= e.id %>" class="btn">watch now</a>
+                        <a href="home/watch/<%= e.id %>" class="btn">watch now</a>
                     </div>
                 </div>
                 <% }) %>
@@ -315,59 +317,6 @@
 
     <!-- order section starts  -->
 
-    <section class="order" id="order">
-
-        <h3 class="sub-heading"> order now </h3>
-        <h1 class="heading"> free and fast </h1>
-
-        <form action="/home/<%= id %> " method="post">
-
-            <div class="inputBox">
-                <div class="input">
-                    <span>your name</span>
-                    <input type="text" placeholder="enter your name">
-                </div>
-                <div class="input">
-                    <span>your number</span>
-                    <input type="number" placeholder="enter your number">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>your order</span>
-                    <input type="text" placeholder="enter food name">
-                </div>
-                <div class="input">
-                    <span>additional comment</span>
-                    <input type="test" placeholder="extra with food">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>rating</span>
-                    <input type="number" placeholder="how many orders">
-                </div>
-                <div class="input">
-                    <span>date and time</span>
-                    <input type="datetime-local">
-                </div>
-            </div>
-            <div class="inputBox">
-                <div class="input">
-                    <span>your address</span>
-                    <textarea name="" placeholder="enter your address" id="" cols="30" rows="10"></textarea>
-                </div>
-                <div class="input">
-                    <span>your message</span>
-                    <textarea name="" placeholder="enter your message" id="" cols="30" rows="10"></textarea>
-                </div>
-            </div>
-
-            <input type="submit" value="order now" class="btn">
-
-        </form>
-
-    </section>
 
     <!-- order section ends -->
 
@@ -394,7 +343,6 @@
                 <a href="#">about</a>
                 <a href="#">List Movies</a>
                 <a href="#">review</a>
-                <a href="#">order</a>
             </div>
 
             <div class="box">
@@ -423,10 +371,10 @@
     <!-- footer section ends -->
 
     <!-- loader part  -->
-    <!-- <div class="loader-container">
+    <div class="loader-container">
         <img src="https://i.imgur.com/ImzbS6o.gif" alt="">
     </div>
- -->
+
 
 
 

@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Favorite, { foreignKey: 'userId' })
       User.belongsToMany(models.Movie, { through: models.Favorite })
     }
+
+
+
   }
   User.init({
     username: DataTypes.STRING,

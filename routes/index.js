@@ -17,17 +17,19 @@ router.get('/home', Controller.ShowMovies)
 
 router.use(isLoggedIn)
 
-router.get('/home/:id', Controller.ShowMovies)
-router.get('/home/:id/account', UserController.getAccount)
-router.get('/home/:id/favorite/:movieId', Controller.Favorite)
-// router.get('/home/:id/')
-router.get('/home/watch/:id', Controller.Watch)
+
+router.get('/home/account', UserController.getAccount)
+router.get('/home/account/edit', UserController.editAccount)
+router.post('/home/account/edit', UserController.updateAccount)
+router.get('/home/favorite/:movieId', Controller.Favorite)
+router.get('/home/watch/:movieId', Controller.Watch)
+router.get('/logout', UserController.logOut)
+
 // router.use(isAdmin) //jadi gabisa lewat kalo belom login kalo karena diletakkan sebelum router lain INGAT POSISI MENUNJUKKAN PRESTASI
 
 
 //router.get('/edit', isAdmin, Controller.edit)
 
-router.get('/logout', UserController.logOut)
 
 
 
